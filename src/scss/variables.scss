@@ -1,0 +1,29 @@
+@use "sass:color";
+
+:root {
+  --color-black: #000;
+  --color-white: #fff;
+  --color-blue: #0D99E7;
+  --color-breadcrumbs: rgba(255, 255, 255, 0.88);
+  --color-dark: #132C38;
+  --body-color: var(--color-white);
+  --body-bg: #011119;
+  --font-base: var(--font-sans);
+  --font-sans:
+    Gilroy, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Ubuntu",
+    "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  --font-serif: Georgia, "Times New Roman", Times, serif;
+  --font-mono: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, "Courier New", monospace;
+  --font-size-root: 100%;
+  --font-size-base: 14px;
+  --font-weight-base: 400;
+  --line-height-base: 1.4;
+  --border-primary: #132C38;
+
+}
+
+
+$screen-ti: 768px;
+$screen-tl: 992px;
+$screen-dl: 1340px;

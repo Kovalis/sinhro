@@ -1,0 +1,96 @@
+@import "../../scss/mixins/flexbox";
+
+.best-players {
+    $this: &;
+
+    &__slider {
+        width: 897px;
+        max-width: 100%;
+        margin: 0 auto;
+        padding-bottom: 50px;
+    }
+
+    .swiper-wrapper {
+        display: flex;
+        align-items: center;
+    }
+
+    &__info {
+        display: none;
+        text-align: center;
+    }
+
+    &__name {
+        display: block;
+        margin-bottom: 12px;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 62.5%;
+    }
+
+    &__age {
+        display: block;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 62.5%;
+    }
+
+    &__slide {
+        display: flex;
+        align-items: center;
+        opacity: 0.7;
+        width: 143px !important;
+        height: 172px;
+
+        &.swiper-slide-next {
+            @include size-best-slide;
+
+            #{$this} {
+                &__wrap-img {
+                    border-radius: 12.4px;
+                }
+            }
+        }
+
+        &.swiper-slide-next {
+            &+.best-players__slide {
+                width: 200px !important;
+                height: 240px;
+                opacity: 1;
+
+                &+.best-players__slide {
+                    @include size-best-slide;
+
+                    #{$this} {
+                        &__wrap-img {
+                            border-radius: 12.4px;
+                        }
+                    }
+                }
+
+                #{$this} {
+                    &__wrap-img {
+                        border-radius: 15px;
+                    }
+
+                    &__info {
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        right: 0;
+                        display: block;
+                        padding-top: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+    &__wrap-img {
+        width: 100%;
+        height: 100%;
+        background-blend-mode: multiply;
+        border-radius: 10.7px;
+    }
+}

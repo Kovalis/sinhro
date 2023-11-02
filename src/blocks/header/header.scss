@@ -1,0 +1,48 @@
+.header {
+  height: 81px;
+  padding: 20px 0;
+  border-bottom: 1.5px solid var(--border-primary);
+
+  @media screen and (min-width: $screen-ti) {
+    padding: 20px 0 19px;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__inner-left {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 0 5px 0 12px;
+    border: none;
+    border-radius: 29px;
+    background-color: var(--color-dark);
+  }
+
+  &__lk {
+    margin-bottom: 2px;
+  }
+
+  &__burger {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5px;
+  }
+
+  &__burger-item {
+    width: 14px;
+    height: 1.5px;
+    background-color: var(--color-blue);
+  }
+}

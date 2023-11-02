@@ -1,0 +1,60 @@
+//- Все примеси в этом файле должны начинаться c имени блока (best-moments)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт в сборку
+
+mixin best-moments(mods, library)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +best-moments('some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' best-moments--' + modsList[i].trim();
+      }
+    }
+
+  section.best-moments
+    .container
+        h2.small-title!= library[0].title
+        .best-moments__slider.swiper
+          .swiper-wrapper
+                .best-moments__slide.swiper-slide
+                    .best-moments__wrap-img(style="background-image: url('./img/void-bg-video.jpg');")
+                        .best-moments__info
+                            span.best-moments__name Миша Поляков
+                            span.best-moments__age 12 лет
+                .best-moments__slide.swiper-slide
+                    .best-moments__wrap-img(style="background-image: url('./img/void-bg-video.jpg');")
+                        .best-moments__info
+                            span.best-moments__name Миша Поляков
+                            span.best-moments__age 12 лет
+                .best-moments__slide.swiper-slide
+                    .best-moments__wrap-img(style="background-image: url('./img/void-bg-video.jpg');")
+                        .best-moments__info
+                            span.best-moments__name Миша Поляков
+                            span.best-moments__age 12 лет
+                .best-moments__slide.swiper-slide
+                    .best-moments__wrap-img(style="background-image: url('./img/void-bg-video.jpg');")
+                        .best-moments__info
+                            span.best-moments__name Миша Поляков
+                            span.best-moments__age 12 лет
+                .best-moments__slide.swiper-slide
+                    .best-moments__wrap-img(style="background-image: url('./img/void-bg-video.jpg');")
+                        .best-moments__info
+                            span.best-moments__name Миша Поляков
+                            span.best-moments__age 12 лет
+                .best-moments__slide.swiper-slide
+                    .best-moments__wrap-img(style="background-image: url('./img/void-bg-video.jpg');")
+                        .best-moments__info
+                            span.best-moments__name Миша Поляков
+                            span.best-moments__age 12 лет
+                .best-moments__slide.swiper-slide
+                    .best-moments__wrap-img(style="background-image: url('./img/void-bg-video.jpg');")
+                        .best-moments__info
+                            span.best-moments__name Миша Поляков
+                            span.best-moments__age 12 лет

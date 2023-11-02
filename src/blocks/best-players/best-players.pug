@@ -1,0 +1,60 @@
+//- Все примеси в этом файле должны начинаться c имени блока (best-players)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт в сборку
+
+mixin best-players(mods, library)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +best-players('some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' best-players--' + modsList[i].trim();
+      }
+    }
+
+  section.best-players
+    .container
+        h2.small-title!= library[0].title
+        .best-players__slider.swiper
+          .swiper-wrapper
+                .best-players__slide.swiper-slide
+                    .best-players__wrap-img(style="background-image: url('./img/best-1.jpg'), linear-gradient(180deg, rgba(14, 22, 44, 0.00) 0%, rgba(14, 22, 44, 0.70) 100%);")
+                        .best-players__info
+                            span.best-players__name Миша Поляков
+                            span.best-players__age 12 лет
+                .best-players__slide.swiper-slide
+                    .best-players__wrap-img(style="background-image: url('./img/best-2.jpg'), linear-gradient(180deg, rgba(14, 22, 44, 0.00) 0%, rgba(14, 22, 44, 0.70) 100%);")
+                        .best-players__info
+                            span.best-players__name Миша Поляков
+                            span.best-players__age 12 лет
+                .best-players__slide.swiper-slide
+                    .best-players__wrap-img(style="background-image: url('./img/best-3.jpg'), linear-gradient(180deg, rgba(14, 22, 44, 0.00) 0%, rgba(14, 22, 44, 0.70) 100%);")
+                        .best-players__info
+                            span.best-players__name Миша Поляков
+                            span.best-players__age 12 лет
+                .best-players__slide.swiper-slide
+                    .best-players__wrap-img(style="background-image: url('./img/best-4.jpg'), linear-gradient(180deg, rgba(14, 22, 44, 0.00) 0%, rgba(14, 22, 44, 0.70) 100%);")
+                        .best-players__info
+                            span.best-players__name Миша Поляков
+                            span.best-players__age 12 лет
+                .best-players__slide.swiper-slide
+                    .best-players__wrap-img(style="background-image: url('./img/best-1.jpg'), linear-gradient(180deg, rgba(14, 22, 44, 0.00) 0%, rgba(14, 22, 44, 0.70) 100%);")
+                        .best-players__info
+                            span.best-players__name Миша Поляков
+                            span.best-players__age 12 лет
+                .best-players__slide.swiper-slide
+                    .best-players__wrap-img(style="background-image: url('./img/best-2.jpg'), linear-gradient(180deg, rgba(14, 22, 44, 0.00) 0%, rgba(14, 22, 44, 0.70) 100%);")
+                        .best-players__info
+                            span.best-players__name Миша Поляков
+                            span.best-players__age 12 лет
+                .best-players__slide.swiper-slide
+                    .best-players__wrap-img(style="background-image: url('./img/best-3.jpg'), linear-gradient(180deg, rgba(14, 22, 44, 0.00) 0%, rgba(14, 22, 44, 0.70) 100%);")
+                        .best-players__info
+                            span.best-players__name Миша Поляков
+                            span.best-players__age 12 лет

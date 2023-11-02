@@ -1,0 +1,24 @@
+//- Все примеси в этом файле должны начинаться c имени блока (form-block)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт в сборку
+
+mixin form-block(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +form-block('some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' form-block--' + modsList[i].trim();
+      }
+    }
+
+  section.form-block
+    .container
+        h2.small-title Заполните форму для  поступления
+        .form-block__inner 43w43

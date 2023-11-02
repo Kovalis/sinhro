@@ -1,0 +1,37 @@
+@import "../../scss/mixins/list-reset";
+@import "../../scss/mixins/text-styles";
+
+.nav {
+  $block-name: &; // #{$block-name}__element
+
+  height: 100%;
+  color: var(--front-primary);
+  background: var(--back-secondary);
+  display: flex;
+  gap: 8px;
+
+  @media screen and (min-width: $screen-ti) {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+
+  &__section-title {
+    @include nav-title;
+
+    color: inherit;
+  }
+
+  &__list {
+    @include list-reset;
+
+    display: grid;
+    gap: 8px;
+  }
+
+  &__link {
+    @include nav-link;
+
+    color: inherit;
+  }
+}

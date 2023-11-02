@@ -1,0 +1,10 @@
+.logo {
+  display: block;
+  width: 101px;
+  height: 32px;
+
+  @media screen and (min-width: $screen-ti) {
+    width: 123px;
+    height: 38px;
+  }
+}

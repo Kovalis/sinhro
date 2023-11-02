@@ -1,0 +1,36 @@
+//- Все примеси в этом файле должны начинаться c имени блока (top-block)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт в сборку
+
+mixin top-block(mods, library)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +top-block('some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' top-block--' + modsList[i].trim();
+      }
+    }
+
+  section.top-block
+    .container
+      .top-block__inner
+        p.top-block__text!= library[0].text
+        h1.top-block__title!= library[0].title
+        .top-block__slider.swiper
+          .swiper-wrapper
+              .swiper-slide
+                  .top-block__wrap-img(style="background-image: url('./img/ex_img.png'), linear-gradient(180deg, rgba(14, 22, 44, 0.00) 0%, rgba(14, 22, 44, 0.70) 100%);")
+              .swiper-slide
+                  .top-block__wrap-img(style="background-image: url('./img/ex_img.png'), linear-gradient(180deg, rgba(14, 22, 44, 0.00) 0%, rgba(14, 22, 44, 0.70) 100%);")
+              .swiper-slide
+                  .top-block__wrap-img(style="background-image: url('./img/ex_img.png'), linear-gradient(180deg, rgba(14, 22, 44, 0.00) 0%, rgba(14, 22, 44, 0.70) 100%);")
+              .swiper-slide
+                  .top-block__wrap-img(style="background-image: url('./img/ex_img.png'), linear-gradient(180deg, rgba(14, 22, 44, 0.00) 0%, rgba(14, 22, 44, 0.70) 100%);")
+          .top-block__pagination.swiper-pagination
