@@ -1,0 +1,13 @@
+.soc-block {
+    display: flex;
+    align-items: center;
+    gap: 61.27px;
+
+    @media screen and (min-width: $screen-ti) {
+        gap: 24px;
+    }
+
+    &__item {
+        text-decoration: none;
+    }
+}

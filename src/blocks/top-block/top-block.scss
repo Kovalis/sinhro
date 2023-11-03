@@ -1,7 +1,20 @@
 .top-block {
 
     &__text {
+        display: block;
         margin-bottom: 40px;
+        padding: 10px 10px 10px 15px;
+        border-radius: 10px;
+        background-color: var(--color-dark);
+        font-size: 10px;
+        line-height: 163.036%;
+
+        @media screen and (min-width: $screen-ti) {
+            padding: 0;
+            background-color: none;
+            font-size: 14px;
+            line-height: 116.455%;
+        }
     }
 
     &__title {

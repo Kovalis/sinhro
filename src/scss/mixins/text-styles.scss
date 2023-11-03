@@ -74,3 +74,9 @@
   font-size: 14px;
   line-height: 1.1429;
 }
+
+@mixin slider-title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 62.5%;
+}

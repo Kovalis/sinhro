@@ -1,0 +1,29 @@
+//- Все примеси в этом файле должны начинаться c имени блока (soc-block)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт в сборку
+
+mixin soc-block(mods, library)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +soc-block('some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' soc-block--' + modsList[i].trim();
+      }
+    }
+
+  .soc-block
+        a.soc-block__item(href="#")
+            img(src="./img/fb.svg", alt="", width="24px", height="24px")
+        a.soc-block__item(href="#")
+            img(src="./img/google.svg", alt="", width="24px", height="24px")
+        a.soc-block__item(href="#")
+            img(src="./img/apple.svg", alt="", width="24px", height="24px")
+        a.soc-block__item(href="#")
+            img(src="./img/inst.svg", alt="", width="24px", height="24px")

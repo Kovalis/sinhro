@@ -1,37 +1,77 @@
 @import "../../scss/mixins/text-styles";
 
 .footer {
-  $block-name: &; // #{$block-name}__element
+  padding: 30.63px 0;
+  border-top: 1.5px solid var(--color-dark);
 
-  padding: 23px 0 24px;
-  border-top: 1px solid var(--border-primary);
+  @media screen and (min-width: $screen-ti) {
+    padding: 40px 0;
+  }
 
-  &__inner {
-    display: flex;
-    justify-content: center;
-    width: calc(100% - 32px);
-    max-width: 1376px;
-    margin: 0 auto;
+  &__menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 23px 61px;
+    margin-bottom: 23px;
 
     @media screen and (min-width: $screen-ti) {
-      justify-content: flex-start;
-      width: 100%;
-      padding-left: 320px;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 80px;
+      margin-bottom: 64px;
     }
+  }
 
-    @media screen and (min-width: $screen-tl) {
-      width: calc(100% - 80px);
-      padding-left: 280px;
+  &__ul {
+    margin: 0;
+  }
+
+  &__li {
+    display: block;
+
+    &:not(:last-child) {
+      margin-bottom: 12px;
     }
+  }
 
-    @media screen and (min-width: $screen-dl) {
-      padding-left: 352px;
+  &__link {
+    display: block;
+    color: var(--color-gray);
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -0.1px;
+    text-decoration: none;
+  }
+
+  &__menu-title {
+    display: block;
+    margin-bottom: 24px;
+    color: var(--color-gray-light);
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.1px;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: 15.3px;
+
+    @media screen and (min-width: $screen-ti) {
+      flex-direction: row;
     }
   }
 
   &__copy {
-    @include footer;
-
-    color: var(--front-secondary);
+    color: var(--color-gray);
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: -0.1px;
   }
 }

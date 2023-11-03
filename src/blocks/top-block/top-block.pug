@@ -20,8 +20,8 @@ mixin top-block(mods, library)
 
   section.top-block
     .container
+      span.top-block__text!= library[0].text
       .top-block__inner
-        p.top-block__text!= library[0].text
         h1.top-block__title!= library[0].title
         .top-block__slider.swiper
           .swiper-wrapper

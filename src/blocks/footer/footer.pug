@@ -12,13 +12,69 @@ mixin footer(mods)
     // список модификаторов
     var allMods = '';
     if(typeof(mods) !== 'undefined' && mods) {
-      var modsList = mods.split(',');
-      for (var i = 0; i < modsList.length; i++) {
-        allMods = allMods + ' footer--' + modsList[i].trim();
+      var modslist = mods.split(',');
+      for (var i = 0; i < modslist.length; i++) {
+        allMods = allMods + ' footer--' + modslist[i].trim();
       }
     }
 
   footer.footer(class= allMods)&attributes(attributes)
-    .container
-      .footer__inner
-        .footer__copy © Project builder
+    .container.container--footer
+      nav.footer__menu
+        .footer__col
+          span.footer__menu-title Products
+          ul.footer__ul
+            li
+              a.footer__link(href="#") Features
+            li
+              a.footer__link(href="#") Integrations
+            li
+              a.footer__link(href="#") Enterprise
+            li
+              a.footer__link(href="#") Solutions
+        .footer__col
+          span.footer__menu-title Products
+          ul.footer__ul
+            li
+              a.footer__link(href="#") Features
+            li
+              a.footer__link(href="#") Integrations
+            li
+              a.footer__link(href="#") Enterprise
+            li
+              a.footer__link(href="#") Solutions
+        .footer__col
+          span.footer__menu-title Products
+          ul.footer__ul
+            li
+              a.footer__link(href="#") Features
+            li
+              a.footer__link(href="#") Integrations
+            li
+              a.footer__link(href="#") Enterprise
+            li
+              a.footer__link(href="#") Solutions
+        .footer__col
+          span.footer__menu-title Resources
+          ul.footer__ul
+            li
+              a.footer__link(href="#") Partners
+            li
+              a.footer__link(href="#") Developers
+            li
+              a.footer__link(href="#") Community
+            li
+              a.footer__link(href="#") Apps
+        .footer__col
+          span.footer__menu-title Company
+          ul.footer__ul
+            li
+              a.footer__link(href="#") About Us
+            li
+              a.footer__link(href="#") Leadership
+      .footer__bottom
+        a(href="/")
+          svg(width="123px", height="38px")
+            use(href= src.icon + 'icon__logo-white')
+        span.footer__copy © 2023 Football. All Rights Reserved.
+        +soc-block

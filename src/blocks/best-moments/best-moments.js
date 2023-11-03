@@ -8,7 +8,12 @@ ready(() => {
         let swiper = new Swiper(`.best-moments .swiper`, {
             loop: true,
             slidesPerView: 'auto',
-            spaceBetween: 20,
+            spaceBetween: 14,
+            breakpoints: {
+                768: {
+                    spaceBetween: 20,
+                }
+              }
         });
     }
 });

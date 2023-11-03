@@ -1,13 +1,22 @@
 @import "../../scss/mixins/flexbox";
+@import "../../scss/mixins/text-styles";
 
 .best-players {
     $this: &;
+    overflow: hidden;
 
     &__slider {
         width: 897px;
-        max-width: 100%;
         margin: 0 auto;
         padding-bottom: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        @media screen and (min-width: $screen-ti) {
+            max-width: 100%;
+            left: 0;
+            transform: none;
+        }
     }
 
     .swiper-wrapper {
@@ -21,12 +30,10 @@
     }
 
     &__name {
+        @include slider-title;
         display: block;
         margin-bottom: 12px;
         text-align: center;
-        font-size: 16px;
-        font-weight: 600;
-        line-height: 62.5%;
     }
 
     &__age {

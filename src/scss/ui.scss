@@ -12,6 +12,10 @@ p {
     line-height: 116.455%;
 }
 
+a {
+    color: currentColor;
+}
+
 .small-title {
     position: relative;
     padding-bottom: 52px;
@@ -21,7 +25,6 @@ p {
     font-weight: 600;
     line-height: 101.898%;
     text-align: center;
-
 
     @media screen and (min-width: $screen-ti) {
         font-size: 24px;

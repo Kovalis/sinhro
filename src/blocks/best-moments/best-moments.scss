@@ -1,5 +1,24 @@
+@import "../../scss/mixins/text-styles";
+
 .best-moments {
     $this: &;
+    overflow: hidden;
+
+    &__slider {
+        width: 665px;
+        margin: 0 auto;
+        padding-bottom: 57px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        @media screen and (min-width: $screen-ti) {
+            width: 954.4px;
+            max-width: 100%;
+            padding-bottom: 81px;
+            left: 0;
+            transform: none;
+        }
+    }
 
     .swiper-wrapper {
         display: flex;
@@ -12,40 +31,109 @@
     }
 
     &__wrap-img {
+        position: absolute;
+        z-index: 5;
         width: 100%;
         height: 100%;
         background-blend-mode: multiply;
         border-radius: 10.3px;
+        cursor: pointer;
+
+        &:after {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            content: "";
+            display: block;
+            width: 46px;
+            height: 46px;
+            background: url("../{{icon}}/video") no-repeat center;
+            background-position: center;
+            background-size: 46px;
+        }
     }
 
     &__slide {
         display: flex;
         align-items: center;
         opacity: 0.5;
-        width: 264px !important;
-        height: 164px;
+        width: 184px !important;
+        height: 115px;
+        border-radius: 7.16px;
+
+        @media screen and (min-width: $screen-ti) {
+            width: 264px !important;
+            height: 164px;
+            border-radius: 10.3px;
+        }
 
         &.swiper-slide-active {
             &+.best-moments__slide {
-                width: 386px !important;
-                height: 240px;
+                width: 269px !important;
+                height: 167px;
                 opacity: 1;
+
+                @media screen and (min-width: $screen-ti) {
+                    width: 386px !important;
+                    height: 240px;
+                }
 
                 #{$this} {
                     &__wrap-img {
-                        border-radius: 15px;
+                        border-radius: 10.5px;
+
+                        @media screen and (min-width: $screen-ti) {
+                            border-radius: 15px;
+                        }
                     }
 
                     &__info {
                         position: absolute;
+                        bottom: auto;
                         top: 100%;
                         left: 0;
                         right: 0;
                         display: block;
                         padding-top: 20px;
+
+                        @media screen and (min-width: $screen-ti) {
+                            bottom: 7px;
+                        }
                     }
                 }
             }
+        }
+    }
+
+    &__info-title,
+    &__info-date,
+    &__info-text {
+        display: block;
+        text-align: center;
+    }
+
+    &__info-title {
+        @include slider-title;
+        margin-bottom: 12px;
+    }
+
+    &__info-date {
+        margin-bottom: 12px;
+    }
+
+    &__info-text {
+        display: none;
+        max-width: 195px;
+        margin: 0 auto;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 12px;
+        line-height: 83.333%;
+
+        @media screen and (min-width: $screen-ti) {
+            display: block;
         }
     }
 }
