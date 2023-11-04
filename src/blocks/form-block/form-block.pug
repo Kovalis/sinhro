@@ -21,4 +21,196 @@ mixin form-block(mods)
   section.form-block
     .container
         h2.small-title Заполните форму для  поступления
-        .form-block__inner 43w43
+        form.form-block__inner.js-form-submit(action="", novalidate)
+          .form-block__selects
+            .form-block__select
+              .input Возраст
+              div
+                label
+                  input(type="radio", name="age", value="age", required)
+                  span Возраст
+                label
+                  input(type="radio", name="age", value="age2", required)
+                  span Возраст
+                label
+                  input(type="radio", name="age", value="age3", required)
+                  span Возраст
+                label
+                  input(type="radio", name="age", value="age4", required)
+                  span Возраст
+                label
+                  input(type="radio", name="age", value="age5", required)
+                  span Возраст
+            .form-block__select
+              .input Чему хочу научиться
+              div
+                label
+                  input(type="checkbox", name="skill", value="skill")
+                  span Навык
+                label
+                  input(type="checkbox", name="skill", value="skill2")
+                  span Навык
+                label
+                  input(type="checkbox", name="skill", value="skill3")
+                  span Навык
+                label
+                  input(type="checkbox", name="skill", value="skill4")
+                  span Навык
+                label
+                  input(type="checkbox", name="skill", value="skill5")
+                  span Навык
+            .form-block__select
+              .input Оцени свои навыки
+              .form-block__row
+                div Дриблинг
+                .star-list
+                  label.star-list__item
+                    input(type="radio", name="skillOwn", value="skill")
+                    svg(width="20px", height="20px")
+                      use(href= src.icon + 'icon__star')
+                  label.star-list__item
+                    input(type="radio", name="skillOwn", value="skill2")
+                    svg(width="20px", height="20px")
+                      use(href= src.icon + 'icon__star')
+                  label.star-list__item
+                    input(type="radio", name="skillOwn", value="skill3")
+                    svg(width="20px", height="20px")
+                      use(href= src.icon + 'icon__star')
+                  label.star-list__item
+                    input(type="radio", name="skillOwn", value="skill4")
+                    svg(width="20px", height="20px")
+                      use(href= src.icon + 'icon__star')
+                  label.star-list__item
+                    input(type="radio", name="skillOwn", value="skill5")
+                    svg(width="20px", height="20px")
+                      use(href= src.icon + 'icon__star')
+              .form-block__row
+                div Дриблинг
+                .star-list
+                  label.star-list__item
+                    input(type="radio", name="skillOwn2", value="skill")
+                    svg(width="20px", height="20px")
+                      use(href= src.icon + 'icon__star')
+                  label.star-list__item
+                    input(type="radio", name="skillOwn2", value="skill2")
+                    svg(width="20px", height="20px")
+                      use(href= src.icon + 'icon__star')
+                  label.star-list__item
+                    input(type="radio", name="skillOwn2", value="skill3")
+                    svg(width="20px", height="20px")
+                      use(href= src.icon + 'icon__star')
+                  label.star-list__item
+                    input(type="radio", name="skillOwn2", value="skill4")
+                    svg(width="20px", height="20px")
+                      use(href= src.icon + 'icon__star')
+                  label.star-list__item
+                    input(type="radio", name="skillOwn2", value="skill5")
+                    svg(width="20px", height="20px")
+                      use(href= src.icon + 'icon__star')
+              .form-block__row
+                div Дриблинг
+                .star-list
+                  label.star-list__item
+                    input(type="radio", name="skillOwn3", value="skill")
+                    svg(width="20px", height="20px")
+                      use(href= src.icon + 'icon__star')
+                  label.star-list__item
+                    input(type="radio", name="skillOwn3", value="skill2")
+                    svg(width="20px", height="20px")
+                      use(href= src.icon + 'icon__star')
+                  label.star-list__item
+                    input(type="radio", name="skillOwn3", value="skill3")
+                    svg(width="20px", height="20px")
+                      use(href= src.icon + 'icon__star')
+                  label.star-list__item
+                    input(type="radio", name="skillOwn3", value="skill4")
+                    svg(width="20px", height="20px")
+                      use(href= src.icon + 'icon__star')
+                  label.star-list__item
+                    input(type="radio", name="skillOwn3", value="skill5")
+                    svg(width="20px", height="20px")
+                      use(href= src.icon + 'icon__star')
+              .form-block__row
+                div Дриблинг
+                .star-list
+                  label.star-list__item
+                    input(type="radio", name="skillOwn4", value="skill")
+                    svg(width="20px", height="20px")
+                      use(href= src.icon + 'icon__star')
+                  label.star-list__item
+                    input(type="radio", name="skillOwn4", value="skill2")
+                    svg(width="20px", height="20px")
+                      use(href= src.icon + 'icon__star')
+                  label.star-list__item
+                    input(type="radio", name="skillOwn4", value="skill3")
+                    svg(width="20px", height="20px")
+                      use(href= src.icon + 'icon__star')
+                  label.star-list__item
+                    input(type="radio", name="skillOwn4", value="skill4")
+                    svg(width="20px", height="20px")
+                      use(href= src.icon + 'icon__star')
+                  label.star-list__item
+                    input(type="radio", name="skillOwn4", value="skill5")
+                    svg(width="20px", height="20px")
+                      use(href= src.icon + 'icon__star')
+              .form-block__row
+                div Дриблинг
+                .star-list
+                  label.star-list__item
+                    input(type="radio", name="skillOwn5", value="skill")
+                    svg(width="20px", height="20px")
+                      use(href= src.icon + 'icon__star')
+                  label.star-list__item
+                    input(type="radio", name="skillOwn5", value="skill2")
+                    svg(width="20px", height="20px")
+                      use(href= src.icon + 'icon__star')
+                  label.star-list__item
+                    input(type="radio", name="skillOwn5", value="skill3")
+                    svg(width="20px", height="20px")
+                      use(href= src.icon + 'icon__star')
+                  label.star-list__item
+                    input(type="radio", name="skillOwn5", value="skill4")
+                    svg(width="20px", height="20px")
+                      use(href= src.icon + 'icon__star')
+                  label.star-list__item
+                    input(type="radio", name="skillOwn5", value="skill5")
+                    svg(width="20px", height="20px")
+                      use(href= src.icon + 'icon__star')
+              .form-block__row
+                div Дриблинг
+                .star-list
+                  label.star-list__item
+                    input(type="radio", name="skillOwn6", value="skill")
+                    svg(width="20px", height="20px")
+                      use(href= src.icon + 'icon__star')
+                  label.star-list__item
+                    input(type="radio", name="skillOwn6", value="skill2")
+                    svg(width="20px", height="20px")
+                      use(href= src.icon + 'icon__star')
+                  label.star-list__item
+                    input(type="radio", name="skillOwn6", value="skill3")
+                    svg(width="20px", height="20px")
+                      use(href= src.icon + 'icon__star')
+                  label.star-list__item
+                    input(type="radio", name="skillOwn6", value="skill4")
+                    svg(width="20px", height="20px")
+                      use(href= src.icon + 'icon__star')
+                  label.star-list__item
+                    input(type="radio", name="skillOwn6", value="skill5")
+                    svg(width="20px", height="20px")
+                      use(href= src.icon + 'icon__star')
+          .input-list
+            .input-wrap
+              span.input-title Имя Фамилия
+              input.input(type="text")
+            .input-wrap
+              span.input-title E-mail
+              input.input.js-mail(type="text")
+            .input-wrap
+              span.input-title Телефон
+              input.input(type="tel")
+            .input-wrap
+              label.js-required.accept-block
+                input(type="checkbox", required)
+                span Я соглашаюсь с политикой персональных даных
+            button.main-btn.js-form-pay-submit(disabled) Отправить

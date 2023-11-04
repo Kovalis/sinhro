@@ -1,10 +1,10 @@
 .header {
   height: 81px;
   padding: 20px 0;
-  border-bottom: 1.5px solid var(--border-primary);
+  border-bottom: 1.5px solid var(--color-dark);
 
   @media screen and (min-width: $screen-ti) {
-    padding: 20px 0 19px;
+    padding: 15px 0 19px;
   }
 
   &__inner {
@@ -45,6 +45,14 @@
 
       @media screen and (min-width: $screen-ti) {
         display: flex;
+      }
+    }
+
+    &--desktop {
+      display: block;
+
+      @media screen and (min-width: $screen-ti) {
+        display: none;
       }
     }
   }

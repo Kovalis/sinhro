@@ -21,12 +21,16 @@ mixin header(mods)
   header.header(class= allMods)&attributes(attributes)
     .container.container--wide
       .header__inner
+        .header__burger.header__burger--desktop
+          .header__burger-item
+          .header__burger-item
+          .header__burger-item
         .header__inner-left
           .header__logo
             +logo
           +breadcrumbs
         .header__menu
-          .header__burger
+          .header__burger.header__burger--mobile-hide
             .header__burger-item
             .header__burger-item
             .header__burger-item

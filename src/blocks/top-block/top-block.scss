@@ -11,7 +11,8 @@
 
         @media screen and (min-width: $screen-ti) {
             padding: 0;
-            background-color: none;
+            margin-bottom: 32px;
+            background-color: transparent;
             font-size: 14px;
             line-height: 116.455%;
         }
@@ -26,7 +27,7 @@
         font-size: 75.857px;
 
         @media screen and (min-width: $screen-ti) {
-            margin-bottom: -142px;
+            margin-bottom: -131px;
             font-size: 117.59px;
         }
     }

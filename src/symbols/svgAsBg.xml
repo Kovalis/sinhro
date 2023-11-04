@@ -1,6 +1,9 @@
 <view id="icon__video-view" viewBox="0 0 46 46" />
 <use href="#icon__video" width="46" height="46" x="0" y="0" />
 
+<view id="icon__select-arrow-view" viewBox="0 80 20 20" />
+<use href="#icon__select-arrow" width="20" height="20" x="0" y="80" />
+
 <view id="icon__breadcrumbs-arrow-view" viewBox="0 160 24 24" />
 <use href="#icon__breadcrumbs-arrow" width="24" height="24" x="0" y="160" />
 

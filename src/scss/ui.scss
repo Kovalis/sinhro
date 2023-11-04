@@ -43,3 +43,82 @@ a {
         content: "";
     }
 }
+
+.input {
+    padding: 10px 10px 10px 15px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--color-dark);
+    border: none;
+    appearance: none;
+    color: var(--color-white);
+    font-size: 16px;
+    outline: none;
+
+    &::placeholder {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.50);
+        opacity: 1;
+    }
+}
+
+.main-btn {
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--color-blue);
+    padding: 10px;
+    min-height: 40px;
+    min-width: 160px;
+    color: var(--color-white);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+    &--wide {
+        width: 100%;
+    }
+
+    &:hover {
+        background-color: var(--color-blue-hover);
+        color: currentColor;
+    }
+
+    &:disabled {
+        pointer-events: none;
+        opacity: 0.5;
+    }
+}
+
+.input-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    @media screen and (min-width: $screen-ti) {
+        gap: 16px;
+    }
+}
+
+.input-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-title {
+    display: block;
+    color: var(--color-white);
+    font-size: 14px;
+    line-height: 140%;
+}
+
+.star-list {
+    display: flex;
+    gap: 7px;
+
+    &__item {}
+}

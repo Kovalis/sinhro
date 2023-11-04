@@ -16,4 +16,16 @@ ready(() => {
               }
         });
     }
+
+    const videoSlide = document.querySelectorAll(".js-play-video");
+
+    if(videoSlide){
+        videoSlide.forEach((item)=>{
+            item.addEventListener("click", ()=>{
+                const videoItem = item.closest(".best-moments__slide").querySelector("iframe");
+                item.classList.add("best-moments__wrap-img--hide");
+                videoItem.src += "&autoplay=1";
+            })
+        })
+    }
 });
