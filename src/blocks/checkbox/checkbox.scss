@@ -1,65 +1,55 @@
 @import "../../scss/mixins/text-styles";
 
 .checkbox {
-  $block-name: &; // #{$block-name}__element
-
   position: relative;
   display: flex;
   gap: 8px;
   justify-self: start;
 
   &__input {
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    opacity: 0;
+    display: none;
   }
 
   &__fake-input {
-    width: 16px;
-    height: 16px;
-    background: var(--back-primary);
-    border: 1px solid var(--border-button);
-    border-radius: 4px;
+    @include flex-center;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    flex-shrink: 0;
+    gap: 7px;
+    width: 100%;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 16px;
     cursor: pointer;
-    transition: background 0.125s ease;
 
     &::after {
       display: block;
-      width: 10px;
-      height: 6px;
-      margin: 3px 2px;
-      border: 2px solid transparent;
-      border-top: none;
-      border-right: none;
-      transform: rotate(-45deg);
-      transition: border-color 0.125s ease;
+      width: 20px;
+      height: 20px;
+      border-radius: 5px;
+      background-color: var(--color-dark);
       content: "";
     }
   }
 
-  &__input:checked + &__fake-input {
-    background: var(--brand-primary);
+  &__input:checked+&__fake-input::after {
+    background: url("../{{icon}}/checked") var(--color-blue) no-repeat center;
+    background-position: center -316px;
+    background-size: 12px 340px;
   }
 
-  &__input[disabled] + &__fake-input {
+  &__input[disabled]+&__fake-input {
     border: 1px solid var(--border-button-disabled);
     cursor: not-allowed;
   }
 
-  &__input[disabled]:checked + &__fake-input {
-    background: var(--brand-primary-light);
-    border: 1px solid var(--brand-primary-light);
+  &__input[disabled]:checked+&__fake-input {
+    border: 1px solid var(--border-button-disabled);
     cursor: not-allowed;
   }
 
-  &__input:checked + &__fake-input::after {
-    border-color: var(--front-invert);
-  }
-
-  &__input[disabled]:checked + &__fake-input::after {
-    border-color: var(--front-invert);
-    opacity: 0.5;
+  &__input[disabled]:checked+&__fake-input::after {
+    background: var(--brand-primary-light);
   }
 
   &__label {
@@ -69,7 +59,7 @@
     user-select: none;
   }
 
-  &__input[disabled] ~ &__label {
+  &__input[disabled]~&__label {
     color: var(--front-tertiary);
     cursor: not-allowed;
   }

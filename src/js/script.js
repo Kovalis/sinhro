@@ -1,5 +1,15 @@
-// import ready from "../js/utils/documentReady.js";
-// import getScrollSize from "../js/utils/getScrollSize.js";
+import ready from "../js/utils/documentReady.js";
 
-// ready(function () {
-// });
+ready(()=>{
+    //spoiler
+    const spoilerBtn = document.querySelectorAll(".spoiler-wrap__title");
+
+    if(spoilerBtn){
+        spoilerBtn.forEach((item)=>{
+            item.addEventListener("click", ()=>{
+                item.closest(".spoiler-wrap").classList.toggle("spoiler-wrap--active");
+            });
+        });
+    }
+
+});

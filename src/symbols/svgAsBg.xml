@@ -7,3 +7,8 @@
 <view id="icon__breadcrumbs-arrow-view" viewBox="0 160 24 24" />
 <use href="#icon__breadcrumbs-arrow" width="24" height="24" x="0" y="160" />
 
+<view id="icon__radiobutton-view" viewBox="0 240 20 20" />
+<use href="#icon__radiobutton" width="20" height="20" x="0" y="240" />
+
+<view id="icon__checked-view" viewBox="0 320 12 12" />
+<use href="#icon__checked" width="12" height="12" x="0" y="320" />

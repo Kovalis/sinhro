@@ -24,193 +24,182 @@ mixin form-block(mods)
         form.form-block__inner.js-form-submit(action="", novalidate)
           .form-block__selects
             .form-block__select
-              .input Возраст
-              div
-                label
-                  input(type="radio", name="age", value="age", required)
-                  span Возраст
-                label
-                  input(type="radio", name="age", value="age2", required)
-                  span Возраст
-                label
-                  input(type="radio", name="age", value="age3", required)
-                  span Возраст
-                label
-                  input(type="radio", name="age", value="age4", required)
-                  span Возраст
-                label
-                  input(type="radio", name="age", value="age5", required)
-                  span Возраст
+              .spoiler-wrap.spoiler-wrap--active
+                .spoiler-wrap__title.spoiler-title.input Возраст
+                .spoiler-content.js-required.js-group-input
+                  +radio("Возраст", _, "age", _, "age", true)
+                  +radio("Возраст", _, "age", _, "age2")
+                  +radio("Возраст", _, "age", _, "age3")
+                  +radio("Возраст", _, "age", _, "age4")
+                  +radio("Возраст", _, "age", _, "age5")
             .form-block__select
-              .input Чему хочу научиться
-              div
-                label
-                  input(type="checkbox", name="skill", value="skill")
-                  span Навык
-                label
-                  input(type="checkbox", name="skill", value="skill2")
-                  span Навык
-                label
-                  input(type="checkbox", name="skill", value="skill3")
-                  span Навык
-                label
-                  input(type="checkbox", name="skill", value="skill4")
-                  span Навык
-                label
-                  input(type="checkbox", name="skill", value="skill5")
-                  span Навык
+              .spoiler-wrap.spoiler-wrap--active
+                .spoiler-wrap__title.spoiler-title.input Чему хочу научиться
+                .spoiler-content
+                  +checkbox("Навык", _, "skill", _, "skill")
+                  +checkbox("Навык", _, "skill", _, "skill2")
+                  +checkbox("Навык", _, "skill", _, "skill3")
+                  +checkbox("Навык", _, "skill", _, "skill4")
+                  +checkbox("Навык", _, "skill", _, "skill5")
+                  +checkbox("Навык", _, "skill", _, "skill6")
             .form-block__select
-              .input Оцени свои навыки
-              .form-block__row
-                div Дриблинг
-                .star-list
-                  label.star-list__item
-                    input(type="radio", name="skillOwn", value="skill")
-                    svg(width="20px", height="20px")
-                      use(href= src.icon + 'icon__star')
-                  label.star-list__item
-                    input(type="radio", name="skillOwn", value="skill2")
-                    svg(width="20px", height="20px")
-                      use(href= src.icon + 'icon__star')
-                  label.star-list__item
-                    input(type="radio", name="skillOwn", value="skill3")
-                    svg(width="20px", height="20px")
-                      use(href= src.icon + 'icon__star')
-                  label.star-list__item
-                    input(type="radio", name="skillOwn", value="skill4")
-                    svg(width="20px", height="20px")
-                      use(href= src.icon + 'icon__star')
-                  label.star-list__item
-                    input(type="radio", name="skillOwn", value="skill5")
-                    svg(width="20px", height="20px")
-                      use(href= src.icon + 'icon__star')
-              .form-block__row
-                div Дриблинг
-                .star-list
-                  label.star-list__item
-                    input(type="radio", name="skillOwn2", value="skill")
-                    svg(width="20px", height="20px")
-                      use(href= src.icon + 'icon__star')
-                  label.star-list__item
-                    input(type="radio", name="skillOwn2", value="skill2")
-                    svg(width="20px", height="20px")
-                      use(href= src.icon + 'icon__star')
-                  label.star-list__item
-                    input(type="radio", name="skillOwn2", value="skill3")
-                    svg(width="20px", height="20px")
-                      use(href= src.icon + 'icon__star')
-                  label.star-list__item
-                    input(type="radio", name="skillOwn2", value="skill4")
-                    svg(width="20px", height="20px")
-                      use(href= src.icon + 'icon__star')
-                  label.star-list__item
-                    input(type="radio", name="skillOwn2", value="skill5")
-                    svg(width="20px", height="20px")
-                      use(href= src.icon + 'icon__star')
-              .form-block__row
-                div Дриблинг
-                .star-list
-                  label.star-list__item
-                    input(type="radio", name="skillOwn3", value="skill")
-                    svg(width="20px", height="20px")
-                      use(href= src.icon + 'icon__star')
-                  label.star-list__item
-                    input(type="radio", name="skillOwn3", value="skill2")
-                    svg(width="20px", height="20px")
-                      use(href= src.icon + 'icon__star')
-                  label.star-list__item
-                    input(type="radio", name="skillOwn3", value="skill3")
-                    svg(width="20px", height="20px")
-                      use(href= src.icon + 'icon__star')
-                  label.star-list__item
-                    input(type="radio", name="skillOwn3", value="skill4")
-                    svg(width="20px", height="20px")
-                      use(href= src.icon + 'icon__star')
-                  label.star-list__item
-                    input(type="radio", name="skillOwn3", value="skill5")
-                    svg(width="20px", height="20px")
-                      use(href= src.icon + 'icon__star')
-              .form-block__row
-                div Дриблинг
-                .star-list
-                  label.star-list__item
-                    input(type="radio", name="skillOwn4", value="skill")
-                    svg(width="20px", height="20px")
-                      use(href= src.icon + 'icon__star')
-                  label.star-list__item
-                    input(type="radio", name="skillOwn4", value="skill2")
-                    svg(width="20px", height="20px")
-                      use(href= src.icon + 'icon__star')
-                  label.star-list__item
-                    input(type="radio", name="skillOwn4", value="skill3")
-                    svg(width="20px", height="20px")
-                      use(href= src.icon + 'icon__star')
-                  label.star-list__item
-                    input(type="radio", name="skillOwn4", value="skill4")
-                    svg(width="20px", height="20px")
-                      use(href= src.icon + 'icon__star')
-                  label.star-list__item
-                    input(type="radio", name="skillOwn4", value="skill5")
-                    svg(width="20px", height="20px")
-                      use(href= src.icon + 'icon__star')
-              .form-block__row
-                div Дриблинг
-                .star-list
-                  label.star-list__item
-                    input(type="radio", name="skillOwn5", value="skill")
-                    svg(width="20px", height="20px")
-                      use(href= src.icon + 'icon__star')
-                  label.star-list__item
-                    input(type="radio", name="skillOwn5", value="skill2")
-                    svg(width="20px", height="20px")
-                      use(href= src.icon + 'icon__star')
-                  label.star-list__item
-                    input(type="radio", name="skillOwn5", value="skill3")
-                    svg(width="20px", height="20px")
-                      use(href= src.icon + 'icon__star')
-                  label.star-list__item
-                    input(type="radio", name="skillOwn5", value="skill4")
-                    svg(width="20px", height="20px")
-                      use(href= src.icon + 'icon__star')
-                  label.star-list__item
-                    input(type="radio", name="skillOwn5", value="skill5")
-                    svg(width="20px", height="20px")
-                      use(href= src.icon + 'icon__star')
-              .form-block__row
-                div Дриблинг
-                .star-list
-                  label.star-list__item
-                    input(type="radio", name="skillOwn6", value="skill")
-                    svg(width="20px", height="20px")
-                      use(href= src.icon + 'icon__star')
-                  label.star-list__item
-                    input(type="radio", name="skillOwn6", value="skill2")
-                    svg(width="20px", height="20px")
-                      use(href= src.icon + 'icon__star')
-                  label.star-list__item
-                    input(type="radio", name="skillOwn6", value="skill3")
-                    svg(width="20px", height="20px")
-                      use(href= src.icon + 'icon__star')
-                  label.star-list__item
-                    input(type="radio", name="skillOwn6", value="skill4")
-                    svg(width="20px", height="20px")
-                      use(href= src.icon + 'icon__star')
-                  label.star-list__item
-                    input(type="radio", name="skillOwn6", value="skill5")
-                    svg(width="20px", height="20px")
-                      use(href= src.icon + 'icon__star')
+              .spoiler-wrap.spoiler-wrap--active
+                .spoiler-wrap__title.spoiler-title.input Оцени свои навыки
+                .spoiler-content
+                  .form-block__row.js-required.js-group-input
+                    .form-block__row-title Дриблинг
+                    .star-list
+                      input(type="radio", name="skillOwn", value="void", checked)
+                      label.star-list__item(for="skillOwn")
+                        svg(width="20px", height="20px")
+                          use(href= src.icon + 'icon__star')
+                      input(type="radio", name="skillOwn", value="skill", id="skillOwn", required)
+                      label.star-list__item(for="skillOwn2")
+                        svg(width="20px", height="20px")
+                          use(href= src.icon + 'icon__star')
+                      input(type="radio", name="skillOwn", value="skill2", id="skillOwn2")
+                      label.star-list__item(for="skillOwn3")
+                        svg(width="20px", height="20px")
+                          use(href= src.icon + 'icon__star')
+                      input(type="radio", name="skillOwn", value="skill3", id="skillOwn3")
+                      label.star-list__item(for="skillOwn4")
+                        svg(width="20px", height="20px")
+                          use(href= src.icon + 'icon__star')
+                      input(type="radio", name="skillOwn", value="skill4", id="skillOwn4")
+                      label.star-list__item(for="skillOwn5")
+                        svg(width="20px", height="20px")
+                          use(href= src.icon + 'icon__star')
+                      input(type="radio", name="skillOwn", value="skill5", id="skillOwn5")
+                  .form-block__row.js-required.js-group-input
+                    .form-block__row-title Пас
+                    .star-list
+                      input(type="radio", name="pass", value="void", checked)
+                      label.star-list__item(for="pass")
+                        svg(width="20px", height="20px")
+                          use(href= src.icon + 'icon__star')
+                      input(type="radio", name="pass", value="skill", id="pass", required)
+                      label.star-list__item(for="pass2")
+                        svg(width="20px", height="20px")
+                          use(href= src.icon + 'icon__star')
+                      input(type="radio", name="pass", value="skill2", id="pass2")
+                      label.star-list__item(for="pass3")
+                        svg(width="20px", height="20px")
+                          use(href= src.icon + 'icon__star')
+                      input(type="radio", name="pass", value="skill3", id="pass3")
+                      label.star-list__item(for="pass4")
+                        svg(width="20px", height="20px")
+                          use(href= src.icon + 'icon__star')
+                      input(type="radio", name="pass", value="skill4", id="pass4")
+                      label.star-list__item(for="pass5")
+                        svg(width="20px", height="20px")
+                          use(href= src.icon + 'icon__star')
+                      input(type="radio", name="pass", value="skill5", id="pass5")
+                  .form-block__row.js-required.js-group-input
+                    .form-block__row-title Выносливость
+                    .star-list
+                      input(type="radio", name="stamina", value="void", checked)
+                      label.star-list__item(for="stamina")
+                        svg(width="20px", height="20px")
+                          use(href= src.icon + 'icon__star')
+                      input(type="radio", name="stamina", value="skill", id="stamina", required)
+                      label.star-list__item(for="stamina2")
+                        svg(width="20px", height="20px")
+                          use(href= src.icon + 'icon__star')
+                      input(type="radio", name="stamina", value="skill2", id="stamina2")
+                      label.star-list__item(for="stamina3")
+                        svg(width="20px", height="20px")
+                          use(href= src.icon + 'icon__star')
+                      input(type="radio", name="stamina", value="skill3", id="stamina3")
+                      label.star-list__item(for="stamina4")
+                        svg(width="20px", height="20px")
+                          use(href= src.icon + 'icon__star')
+                      input(type="radio", name="stamina", value="skill4", id="stamina4")
+                      label.star-list__item(for="stamina5")
+                        svg(width="20px", height="20px")
+                          use(href= src.icon + 'icon__star')
+                      input(type="radio", name="stamina", value="skill5", id="stamina5")
+                  .form-block__row.js-required.js-group-input
+                    .form-block__row-title Удар
+                    .star-list
+                      input(type="radio", name="hit", value="void", checked)
+                      label.star-list__item(for="hit")
+                        svg(width="20px", height="20px")
+                          use(href= src.icon + 'icon__star')
+                      input(type="radio", name="hit", value="skill", id="hit", required)
+                      label.star-list__item(for="hit2")
+                        svg(width="20px", height="20px")
+                          use(href= src.icon + 'icon__star')
+                      input(type="radio", name="hit", value="skill2", id="hit2")
+                      label.star-list__item(for="hit3")
+                        svg(width="20px", height="20px")
+                          use(href= src.icon + 'icon__star')
+                      input(type="radio", name="hit", value="skill3", id="hit3")
+                      label.star-list__item(for="hit4")
+                        svg(width="20px", height="20px")
+                          use(href= src.icon + 'icon__star')
+                      input(type="radio", name="hit", value="skill4", id="hit4")
+                      label.star-list__item(for="hit5")
+                        svg(width="20px", height="20px")
+                          use(href= src.icon + 'icon__star')
+                      input(type="radio", name="hit", value="skill5", id="hit5")
+                  .form-block__row.js-required.js-group-input
+                    .form-block__row-title Защита
+                    .star-list
+                      input(type="radio", name="defence", value="void", checked)
+                      label.star-list__item(for="defence")
+                        svg(width="20px", height="20px")
+                          use(href= src.icon + 'icon__star')
+                      input(type="radio", name="defence", value="skill", id="defence", required)
+                      label.star-list__item(for="defence2")
+                        svg(width="20px", height="20px")
+                          use(href= src.icon + 'icon__star')
+                      input(type="radio", name="defence", value="skill2", id="defence2")
+                      label.star-list__item(for="defence3")
+                        svg(width="20px", height="20px")
+                          use(href= src.icon + 'icon__star')
+                      input(type="radio", name="defence", value="skill3", id="defence3")
+                      label.star-list__item(for="defence4")
+                        svg(width="20px", height="20px")
+                          use(href= src.icon + 'icon__star')
+                      input(type="radio", name="defence", value="skill4", id="defence4")
+                      label.star-list__item(for="defence5")
+                        svg(width="20px", height="20px")
+                          use(href= src.icon + 'icon__star')
+                      input(type="radio", name="defence", value="skill5", id="defence5")
+                  .form-block__row.js-required.js-group-input
+                    .form-block__row-title Навес
+                    .star-list
+                      input(type="radio", name="cross", value="void", checked)
+                      label.star-list__item(for="cross")
+                        svg(width="20px", height="20px")
+                          use(href= src.icon + 'icon__star')
+                      input(type="radio", name="cross", value="skill", id="cross", required)
+                      label.star-list__item(for="cross2")
+                        svg(width="20px", height="20px")
+                          use(href= src.icon + 'icon__star')
+                      input(type="radio", name="cross", value="skill2", id="cross2")
+                      label.star-list__item(for="cross3")
+                        svg(width="20px", height="20px")
+                          use(href= src.icon + 'icon__star')
+                      input(type="radio", name="cross", value="skill3", id="cross3")
+                      label.star-list__item(for="cross4")
+                        svg(width="20px", height="20px")
+                          use(href= src.icon + 'icon__star')
+                      input(type="radio", name="cross", value="skill4", id="cross4")
+                      label.star-list__item(for="cross5")
+                        svg(width="20px", height="20px")
+                          use(href= src.icon + 'icon__star')
+                      input(type="radio", name="cross", value="skill5", id="cross5")
           .input-list
             .input-wrap
               span.input-title Имя Фамилия
-              input.input(type="text")
+              input.input.js-required(type="text", placeholder="Please Input", required)
             .input-wrap
               span.input-title E-mail
-              input.input.js-mail(type="text")
+              input.input.js-mail.js-required(type="text", placeholder="Please Input", required)
             .input-wrap
               span.input-title Телефон
-              input.input(type="tel")
-            .input-wrap
-              label.js-required.accept-block
-                input(type="checkbox", required)
-                span Я соглашаюсь с политикой персональных даных
-            button.main-btn.js-form-pay-submit(disabled) Отправить
+              input.input.js-required(type="tel", placeholder="+ 7", required)
+            .input-wrap.js-required
+              +checkbox("Я соглашаюсь с политикой персональных даных", "form-block__agree", "polit", _, _, true)
+            button.main-btn.js-form-pay-submit Отправить

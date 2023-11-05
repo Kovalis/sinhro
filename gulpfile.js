@@ -222,9 +222,11 @@ function generateSvgSprite(cb) {
       .pipe(cheerio({
         run: function ($) {
           let addition;
+          let svg = $('svg');
           try {
             addition = fs.readFileSync(dir.svgAsBg, 'utf8');
-            $('svg').append(addition);
+            svg.attr('fill','none');
+            svg.append(addition);
           } catch (err) { /**/ }
         },
         parserOptions: { xmlMode: true }

@@ -49,7 +49,7 @@
     }
 
     &--desktop {
-      display: block;
+      display: flex;
 
       @media screen and (min-width: $screen-ti) {
         display: none;

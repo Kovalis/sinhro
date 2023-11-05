@@ -46,9 +46,9 @@
 }
 
 @mixin checkbox-label {
-  font-weight: 400;
   font-size: 14px;
-  line-height: 1.1429;
+  font-weight: 600;
+  line-height: 140%;
 }
 
 @mixin input {

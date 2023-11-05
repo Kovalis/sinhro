@@ -1,22 +1,14 @@
 
 import ready from "../../js/utils/documentReady.js";
 import IMask from "imask";
-// import Inputmask from"inputmask";
 // import { initPopup } from "../../js/common/popup.js";
 
 ready(function () {
 
     const formPay = document.querySelector('.form-block');
     const jsRequired = formPay.querySelectorAll(".js-required");
-    const formPaySubmit = formPay.querySelector('.js-form-pay-submit');
-    const numberCard = formPay.querySelector('.js-card-number');
+    const formPaySubmit = formPay.querySelector('.js-form-submit');
     let flagSentForm = true;
-
-    // const formattedCreditCardInput = new CreditCardInputMask({
-    //     element: numberCard,
-    //     pattern: "{{9999}} {{9999}} {{9999}} {{9999}}",
-    // });
-
 
     // phone input
     const phoneFields = document.querySelectorAll("input[type=tel]");
@@ -29,27 +21,22 @@ ready(function () {
         });
     }
 
-    // email input
-    // const emailFields = document.querySelectorAll(".js-mail");
-
-    // if (emailFields) {
-    //     emailFields.forEach((field) => {
-    //         IMask(field, {
-    //             mask: "*{1,20}[.*{1,20}][.*{1,20}][.*{1,20}]@*{1,20}[.*{2,6}][.*{1,2}]",
-    //         });
-    //     });
-    // }
-
     function checkedInputs(){
         flagSentForm = true;
         const itemsInput = formPay.querySelectorAll("input[required]");
         itemsInput.forEach((item)=>{
-            if(item.type == "checkbox"){
-                if(item.checked == false){
+            if(item.type == "checkbox" || item.type == "radio"){
+                const groupInput = item.closest(".js-required");
+                if(groupInput.classList.contains("js-group-input")){
                     item.closest(".js-required").classList.add("required-error");
                     flagSentForm = false;
                 } else{
-                    item.closest(".js-required").classList.remove("required-error");
+                    if(item.checked == false){
+                        item.closest(".js-required").classList.add("required-error");
+                        flagSentForm = false;
+                    } else{
+                        item.closest(".js-required").classList.remove("required-error");
+                    }
                 }
             } else{
                 if(item.value == ""){
@@ -62,12 +49,44 @@ ready(function () {
         });
 
         if(flagSentForm){
-            console.log(formPaySubmit)
-            formPaySubmit.submit();
+            let requestInfo = new Promise(function(resolve, reject){
+                setTimeout(() => {
+                    resolve(true);
+                  }, 1000);
+            });
+
+            requestInfo
+                .then((result)=>{
+                    alert("Успех")
+                    formPaySubmit.submit();
+                })
+                .catch((result)=>{
+                    console.log(result);
+                    return false;
+                })
         } else{
             return false;
         }
     }
+
+    const groupInputs = formPay.querySelectorAll(".js-group-input");
+
+    if(groupInputs){
+        groupInputs.forEach((item)=>{
+            const radioInputs = item.querySelectorAll("input");
+
+            radioInputs.forEach((element)=>{
+                //сбрасывает required при первом изменении radio кнопки
+                element.addEventListener("change", ()=>{
+                    const radioInput = item.querySelector("input[required]");
+                    radioInput.required = false;
+                    flagSentForm = true;
+                    item.closest(".js-required").classList.remove("required-error");
+                })
+            });
+        });
+    }
+
 
     jsRequired.forEach((element)=>{
         element.addEventListener("focus", ()=>{

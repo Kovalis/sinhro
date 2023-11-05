@@ -1,7 +1,7 @@
 //- Все примеси в этом файле должны начинаться c имени блока (checkbox)
 //- Упоминание имени блока в классах обязательно, без этого он не попадёт в сборку
 
-mixin checkbox(label, mods, name, id)
+mixin checkbox(label, mods, name, id, value, required)
 
   //- Принимает:
   //-   label      {string} - Текст лейбла для чекбокса
@@ -21,8 +21,11 @@ mixin checkbox(label, mods, name, id)
       }
     }
 
-  label.checkbox(class= allMods)
-    input.checkbox__input(id= id, type= 'checkbox', name= name)&attributes(attributes)
+  label.checkbox(class= mods)
+    if required == true
+      input.checkbox__input(id= id, type= 'checkbox', name= name, value=value, required)&attributes(attributes)
+    else
+      input.checkbox__input(id= id, type= 'checkbox', name= name, value=value)&attributes(attributes)
     span.checkbox__fake-input
-    if label
-      span.checkbox__label!= label
+      if label
+        span.checkbox__label!= label

@@ -1,55 +1,51 @@
 @import "../../scss/mixins/text-styles";
 
 .radio {
-  $block-name: &; // #{$block-name}__element
-
   position: relative;
   display: flex;
   gap: 8px;
   justify-self: start;
 
   &__input {
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    opacity: 0;
+    display: none;
   }
 
   &__fake-input {
     @include flex-center;
 
-    width: 16px;
-    height: 16px;
-    background: var(--back-primary);
-    border: 1px solid var(--border-button);
-    border-radius: 8px;
+    justify-content: space-between;
+    flex-shrink: 0;
+    width: 100%;
+    border-radius: 16px;
     cursor: pointer;
 
     &::after {
       display: block;
-      width: 8px;
-      height: 8px;
-      border-radius: 8px;
-      transition: background 0.125s ease;
+      width: 20px;
+      height: 20px;
+      border-radius: 16px;
+      background-color: var(--color-dark);
       content: "";
     }
   }
 
-  &__input:checked + &__fake-input::after {
-    background: var(--brand-primary);
+  &__input:checked+&__fake-input::after {
+    background: url("../{{icon}}/radiobutton") no-repeat center;
+    background-position: center -240px;
+    background-size: 20px 260px;
   }
 
-  &__input[disabled] + &__fake-input {
+  &__input[disabled]+&__fake-input {
     border: 1px solid var(--border-button-disabled);
     cursor: not-allowed;
   }
 
-  &__input[disabled]:checked + &__fake-input {
+  &__input[disabled]:checked+&__fake-input {
     border: 1px solid var(--border-button-disabled);
     cursor: not-allowed;
   }
 
-  &__input[disabled]:checked + &__fake-input::after {
+  &__input[disabled]:checked+&__fake-input::after {
     background: var(--brand-primary-light);
   }
 
@@ -60,7 +56,7 @@
     user-select: none;
   }
 
-  &__input[disabled] ~ &__label {
+  &__input[disabled]~&__label {
     color: var(--front-tertiary);
     cursor: not-allowed;
   }
