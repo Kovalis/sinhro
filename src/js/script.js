@@ -12,4 +12,14 @@ ready(()=>{
         });
     }
 
+    // mobile menu
+    const menuTrigger = document.querySelectorAll(".js-menu-btn");
+    menuTrigger.forEach((item)=>{
+        item.addEventListener("click", (event) =>{
+            event.preventDefault();
+            const navMenu = item.closest(".header").querySelector(".nav");
+            navMenu.classList.toggle("nav--active");
+        });
+    })
+
 });

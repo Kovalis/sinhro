@@ -1,7 +1,7 @@
 
 import ready from "../../js/utils/documentReady.js";
 import IMask from "imask";
-// import { initPopup } from "../../js/common/popup.js";
+import { initPopup } from "../../js/common/popup.js";
 
 ready(function () {
 
@@ -57,8 +57,9 @@ ready(function () {
 
             requestInfo
                 .then((result)=>{
-                    alert("Успех")
-                    formPaySubmit.submit();
+                    //formPaySubmit.submit();
+                    const btnPopup = document.querySelector(".js-popup");
+                    btnPopup.click();
                 })
                 .catch((result)=>{
                     console.log(result);
@@ -101,11 +102,11 @@ ready(function () {
     });
 
     //popup
-    // const choosePopup = document.querySelector(".popup");
-    // const chooseBtn = document.querySelector(".js-popup");
-    // if (choosePopup && chooseBtn) {
-    //   const popupClass = ".popup";
-    //   const triggerBtn = ".js-popup";
-    //   initPopup(popupClass, triggerBtn);
-    // }
+    const choosePopup = document.querySelector(".popup");
+    const chooseBtn = document.querySelector(".js-popup");
+    if (choosePopup && chooseBtn) {
+      const popupClass = ".popup";
+      const triggerBtn = ".js-popup";
+      initPopup(popupClass, triggerBtn);
+    }
 });

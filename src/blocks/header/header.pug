@@ -21,7 +21,7 @@ mixin header(mods)
   header.header(class= allMods)&attributes(attributes)
     .container.container--wide
       .header__inner
-        .header__burger.header__burger--desktop
+        .header__burger.header__burger--desktop.js-menu-btn
           .header__burger-item
           .header__burger-item
           .header__burger-item
@@ -30,9 +30,9 @@ mixin header(mods)
             +logo
           +breadcrumbs
         .header__menu
-          .header__burger.header__burger--mobile-hide
+          .header__burger.header__burger--mobile-hide.js-menu-btn
             .header__burger-item
             .header__burger-item
             .header__burger-item
-          img.header__lk(src="./img/user.svg", alt="", width="34px", height="36px")
-          //- +nav
+          img.header__lk(src="./img/user.svg", alt="", width="34", height="36")
+          +nav

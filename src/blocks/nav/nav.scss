@@ -2,36 +2,40 @@
 @import "../../scss/mixins/text-styles";
 
 .nav {
-  $block-name: &; // #{$block-name}__element
-
   height: 100%;
-  color: var(--front-primary);
-  background: var(--back-secondary);
-  display: flex;
-  gap: 8px;
+  display: none;
+  align-items: center;
+  gap: 60px;
 
-  @media screen and (min-width: $screen-ti) {
+  &--active {
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
+    gap: 20px;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    top: calc(100% + 19px);
+    right: 0;
+    z-index: 99;
+    height: auto;
+    padding: 30px 16px;
+    background-color: var(--color-dark);
+
+    @media screen and (min-width: $screen-ti) {
+      left: auto;
+      width: 300px;
+    }
   }
 
-  &__section-title {
-    @include nav-title;
-
-    color: inherit;
-  }
-
-  &__list {
-    @include list-reset;
-
-    display: grid;
-    gap: 8px;
-  }
-
-  &__link {
+  &__item {
     @include nav-link;
 
-    color: inherit;
+    color: var(--color-white);
+    text-decoration: none;
+    transition: 0.3s color;
+
+    &:hover,
+    &--active {
+      color: var(--color-nav);
+    }
   }
 }

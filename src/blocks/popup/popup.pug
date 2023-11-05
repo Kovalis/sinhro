@@ -1,0 +1,37 @@
+//- Все примеси в этом файле должны начинаться c имени блока (popup)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin popup(title, id, mods)
+
+  //- Принимает:
+  //-   title         {string} - заголовок попапа;
+  //-   id            {string} - id попапа.
+  //-   mods          {string} - список модификаторов;
+  //- Вызов:
+        +popup('some-mod', 'id')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' popup--' + modsList[i].trim();
+      }
+    }
+
+  .popup(class=allMods id=id)&attributes(attributes)
+    .popup__inner
+      div.popup__background.js-popup-background
+        .popup__container.js-popup-container
+          .popup__content
+            .popup__header
+              .popup__title Успешная отправка!
+
+              button.popup__close-btn.js-popup-close-btn
+                span.wrap-icon
+                  svg(width="20", height="20")
+                    use(href= src.icon + 'icon__close')
+            .popup__main
+              p Наши менеджеры свяжутся с вами в ближайшее время

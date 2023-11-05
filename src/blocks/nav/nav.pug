@@ -18,5 +18,4 @@ mixin nav
 
   nav.nav(class=allMods)&attributes(attributes)
     each section in library.section
-      .nav__section
-        a.nav__section-title.link(href= '#' + section.href)!= section.title
+      a.nav__item(href= '#' + section.href)!= section.title

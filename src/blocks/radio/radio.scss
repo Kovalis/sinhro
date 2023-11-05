@@ -1,6 +1,7 @@
 @import "../../scss/mixins/text-styles";
 
 .radio {
+  $this: &;
   position: relative;
   display: flex;
   gap: 8px;
@@ -14,7 +15,6 @@
     @include flex-center;
 
     justify-content: space-between;
-    flex-shrink: 0;
     width: 100%;
     border-radius: 16px;
     cursor: pointer;
@@ -24,8 +24,11 @@
       width: 20px;
       height: 20px;
       border-radius: 16px;
+      flex-shrink: 0;
       background-color: var(--color-dark);
+      border: 1px solid var(--color-dark);
       content: "";
+      transition: border 0.3s;
     }
   }
 
@@ -35,20 +38,6 @@
     background-size: 20px 260px;
   }
 
-  &__input[disabled]+&__fake-input {
-    border: 1px solid var(--border-button-disabled);
-    cursor: not-allowed;
-  }
-
-  &__input[disabled]:checked+&__fake-input {
-    border: 1px solid var(--border-button-disabled);
-    cursor: not-allowed;
-  }
-
-  &__input[disabled]:checked+&__fake-input::after {
-    background: var(--brand-primary-light);
-  }
-
   &__label {
     @include checkbox-label;
 
@@ -56,8 +45,11 @@
     user-select: none;
   }
 
-  &__input[disabled]~&__label {
-    color: var(--front-tertiary);
-    cursor: not-allowed;
+  &:hover {
+    #{$this} {
+      &__fake-input::after {
+        border-color: var(--color-blue);
+      }
+    }
   }
 }
