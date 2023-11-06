@@ -22,7 +22,7 @@ mixin breadcrumbs(mods)
     li.breadcrumbs__item
         a.breadcrumbs__link(href="#")
           svg(width="24", height="24")
-            use(href= src.icon + 'icon__home')
+            use(xlink:href= '.' +  src.icon + 'icon__home')
     li.breadcrumbs__item
         a.breadcrumbs__link(href="#") шаг 1
     li.breadcrumbs__item

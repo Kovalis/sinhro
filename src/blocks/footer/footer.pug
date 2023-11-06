@@ -75,6 +75,6 @@ mixin footer(mods)
       .footer__bottom
         a(href="/")
           svg(width="123", height="38")
-            use(href= src.icon + 'icon__logo-white')
+            use(xlink:href= '.' +  src.icon + 'icon__logo-white')
         span.footer__copy © 2023 Football. All Rights Reserved.
         +soc-block
